@@ -1,7 +1,38 @@
 console.log('***** Music Collection *****')
 // Safe Zone -- Write code below this line
+let myCollection = []
 
+function addToCollection(collection, title, artist, yearPublished) {
+  let album = {
+    title: title,
+    artist: artist,
+    yearPublished: yearPublished
+  }
 
+  collection.push(album);
+  //console.log(addToCollection());
+  return album;
+ 
+
+}
+
+addToCollection(myCollection, 'Coloring Book', 'Chance the Rapper', 2016);
+addToCollection(myCollection, 'Coloring Book', 'Chance the Rapper', 2016);
+addToCollection(myCollection, 'Coloring Book', 'Chance the Rapper', 2016);
+addToCollection(myCollection, 'Coloring Book', 'Chance the Rapper', 2016);
+addToCollection(myCollection, 'Coloring Book', 'Chance the Rapper', 2016);
+addToCollection(myCollection, 'Coloring Book', 'Chance the Rapper', 2016);
+addToCollection(myCollection, 'Coloring Book', 'Chance the Rapper', 2016);
+
+console.log(myCollection);
+
+function showCollection(collection) {
+  for(let album of collection) {
+    console.log('TITLE: ' + album.title + 'ARTIST: ' + album.artist + 'PUBLISHED: ' + album.yearPublished);
+  }
+}
+
+showCollection(myCollection);
 
 
 
