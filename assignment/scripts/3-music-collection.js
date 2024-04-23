@@ -1,5 +1,7 @@
 console.log('***** Music Collection *****')
 // Safe Zone -- Write code below this line
+
+//Declaring my empty collection array
 let myCollection = []
 
 function addToCollection(collection, title, artist, yearPublished) {
@@ -10,29 +12,49 @@ function addToCollection(collection, title, artist, yearPublished) {
   }
 
   collection.push(album);
-  //console.log(addToCollection());
   return album;
- 
+} //end addToCollection
 
-}
 
+//populating "myCollections" array with six albums
 addToCollection(myCollection, 'Coloring Book', 'Chance the Rapper', 2016);
-addToCollection(myCollection, 'Coloring Book', 'Chance the Rapper', 2016);
-addToCollection(myCollection, 'Coloring Book', 'Chance the Rapper', 2016);
-addToCollection(myCollection, 'Coloring Book', 'Chance the Rapper', 2016);
-addToCollection(myCollection, 'Coloring Book', 'Chance the Rapper', 2016);
-addToCollection(myCollection, 'Coloring Book', 'Chance the Rapper', 2016);
-addToCollection(myCollection, 'Coloring Book', 'Chance the Rapper', 2016);
+addToCollection(myCollection, 'ADHD', 'Joyner Lucas', 2020);
+addToCollection(myCollection, 'Twistin the Night Away', 'Sam Cooke', 1962);
+addToCollection(myCollection, 'Steal Your Face', 'Grateful Dead', 1976);
+addToCollection(myCollection, 'Blood Sugar Sex Magik', 'Red Hot Chilli Peppers', 1991);
+addToCollection(myCollection, 'Ready to Die', 'Notorious BIG', 1994);
 
+//testing array population with console.log()
 console.log(myCollection);
 
 function showCollection(collection) {
   for(let album of collection) {
-    console.log('TITLE: ' + album.title + 'ARTIST: ' + album.artist + 'PUBLISHED: ' + album.yearPublished);
+    console.log('TITLE: ' + album.title + ' ' + 'ARTIST: ' + album.artist + ' ' + 'PUBLISHED: ' + album.yearPublished);
   }
-}
+} //end showCollection
 
 showCollection(myCollection);
+
+function findByArtist(collection, artist) {
+  let match = [];
+  for(let album of collection) {
+    if(artist === album.artist) {
+      match.push(album);
+    }
+  }
+  console.log('Match Array:', match);
+  return match;
+} //end findByArtist
+
+//test with match
+findByArtist(myCollection, 'Red Hot Chilli Peppers');
+//test without match
+findByArtist(myCollection, 'No Match');
+
+
+
+
+
 
 
 
